@@ -140,27 +140,20 @@
  "carta": {
   "categorias": [
    {
-    "id": "tortas-enteras",
-    "nombre": "Tortas enteras",
-    "anticipacionHoras": 24,
-    "sena": 0.5
+    "id": "cafeteria",
+    "nombre": "Cafetería"
    },
    {
-    "id": "navidad",
-    "nombre": "Navidad malcriada",
-    "especial": true,
-    "desde": "2026-12-01",
-    "hasta": "2026-12-24",
-    "avisoDias": 45,
-    "bajada": "Latas, pan dulce y cajas para regalar"
+    "id": "otras",
+    "nombre": "Otras bebidas"
    },
    {
-    "id": "alfajores",
-    "nombre": "Alfajores xxxl"
+    "id": "frias",
+    "nombre": "Bebidas frías"
    },
    {
-    "id": "cookies",
-    "nombre": "Cookies"
+    "id": "tes",
+    "nombre": "Nuestros tés"
    },
    {
     "id": "tortas",
@@ -169,6 +162,14 @@
    {
     "id": "dulce",
     "nombre": "Mostrador dulce"
+   },
+   {
+    "id": "alfajores",
+    "nombre": "Alfajores xxxl"
+   },
+   {
+    "id": "cookies",
+    "nombre": "Cookies"
    },
    {
     "id": "salado",
@@ -187,20 +188,19 @@
     "nombre": "Brunch para 2"
    },
    {
-    "id": "cafeteria",
-    "nombre": "Cafetería"
+    "id": "tortas-enteras",
+    "nombre": "Tortas enteras",
+    "anticipacionHoras": 24,
+    "sena": 0.5
    },
    {
-    "id": "otras",
-    "nombre": "Otras bebidas"
-   },
-   {
-    "id": "frias",
-    "nombre": "Bebidas frías"
-   },
-   {
-    "id": "tes",
-    "nombre": "Nuestros tés"
+    "id": "navidad",
+    "nombre": "Navidad malcriada",
+    "especial": true,
+    "desde": "2026-12-01",
+    "hasta": "2026-12-24",
+    "avisoDias": 45,
+    "bajada": "Latas, pan dulce y cajas para regalar"
    }
   ],
   "productos": [

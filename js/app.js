@@ -147,7 +147,7 @@
     </section>`;
   };
 
-  const GRUPOS_CELU = [['g1', 'Tortas', ['tortas']], ['g2', 'Mostrador dulce', ['dulce']], ['g3', 'Alfajores y cookies', ['alfajores', 'cookies']], ['g4', 'Salado', ['salado']], ['g5', 'Sandwiches', ['sandwiches']], ['g6', 'Cocina y brunch', ['cocina', 'brunch']], ['g7', 'Café', ['cafeteria', 'otras']], ['g8', 'Frías', ['frias']], ['g9', 'Tés y matcha', ['tes', 'matcha']]];
+  const GRUPOS_CELU = [['g1', 'Tortas', ['tortas']], ['g2', 'Mostrador dulce', ['dulce']], ['g3', 'Alfajores y cookies', ['alfajores', 'cookies']], ['g4', 'Salado', ['salado']], ['g5', 'Sandwiches', ['sandwiches']], ['g6', 'Cocina', ['cocina']], ['g6b', 'Brunch para 2', ['brunch']], ['g7', 'Café', ['cafeteria', 'otras']], ['g8', 'Frías', ['frias']], ['g9', 'Tés y matcha', ['tes', 'matcha']]];
   let hojaAct = 0, cajaAct = 'g1';
   const pintarCarta = (cats, prods) => {
     const hojas = $('#hojas'), celu = $('#cajas-celu'), chips = $('#cat-chips');
