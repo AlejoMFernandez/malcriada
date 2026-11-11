@@ -40,7 +40,7 @@ section[id]{scroll-margin-top:12px}
 .torta .ph{aspect-ratio:1/1;border-radius:20px}
 .torta .ph img{pointer-events:none}
 .torta-info{padding:18px 10px 8px;display:flex;flex-direction:column;flex:1}
-.torta h3{font-size:34px;color:var(--bordo);line-height:1.15;min-height:2.3em;display:flex;align-items:flex-end}
+.torta h3{font-size:34px;color:var(--bordo);line-height:1.15;min-height:2.3em}
 .torta p{font-size:15px;margin:6px 0 14px;min-height:3em;line-height:1.5}
 .torta-pie{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .torta-pie b{font-size:18px;font-weight:600}
@@ -252,3 +252,11 @@ html.pill-oculta .kit-demo-pill{opacity:0!important;pointer-events:none;transfor
 @media (max-width:380px){.sabores li span,.lista-tortas span,.caja li span{font-size:14px}.sabores li{gap:10px}}
 .kit-sum__desc{color:var(--ciruela)!important}
 .kit-pay__opt.is-off .kit-pay__card b{color:#6b4b55}
+
+.pop-mostrador{font-size:14.5px;font-weight:600;color:var(--ciruela)}
+html.pop-on .kit-demo-pill{opacity:0!important;pointer-events:none}
+@media (min-width:701px) and (max-width:1100px){
+  .hoja{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .alf-torre{aspect-ratio:auto;height:100%}
+}
+.pila{display:flex;flex-direction:column;gap:20px}

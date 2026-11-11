@@ -96,7 +96,7 @@
 .tapa svg.c{fill:var(--bordo)}
 .tapa .script{font-size:clamp(48px,7vw,86px);color:var(--bordo);margin-top:2px}
 .tapa .versal{font-size:12px;color:var(--bordo);letter-spacing:.3em;margin-top:6px}
-.abierta .tapa{transform:translate(52%,52%) scale(.32) rotate(24deg)}
+.abierta .tapa{transform:translate(-47%,-47%) scale(.32) rotate(-22deg)}
 .lata-acciones{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
 .lata-ticket{background:var(--crema);color:var(--tinta);border-radius:22px;padding:22px 24px;position:relative;width:100%;max-width:330px}
 .lata-ticket .ph{height:190px;border-radius:14px;margin-bottom:14px}
@@ -117,11 +117,17 @@
 .pop-caja{width:min(380px,100%);height:min(560px,calc(100svh - 40px));background:var(--crema);border-radius:28px;padding:16px 16px 22px;display:flex;flex-direction:column;position:relative;transform:translateY(20px) scale(.96);transition:transform .4s cubic-bezier(.3,1.4,.5,1)}
 .pop.abierto .pop-caja{transform:none}
 .pop-caja .ph{flex:1 1 auto;min-height:150px;border-radius:20px}
-.pop-caja h3{font-family:var(--script);font-weight:400;font-size:40px;color:var(--bordo);line-height:1.05;margin:14px 6px 4px;height:44px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.pop-caja p{margin:0 6px;font-size:15.5px;height:48px;overflow:hidden}
+.pop-caja h3{font-family:var(--script);font-weight:400;font-size:40px;color:var(--bordo);line-height:1.3;margin:12px 6px 2px;height:54px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#pop .pop-caja p{margin:0 6px;font-size:15.5px;line-height:1.5;height:70px;overflow:hidden}
 .pop-caja .precio{margin:10px 6px 14px;font-weight:600;font-size:16px;height:24px}
 .pop-caja .fila .btn-cinta{white-space:nowrap;padding:15px 28px 15px 26px}
 .pop-caja .fila .link-trazo{white-space:nowrap}
 .pop-caja .fila{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:0 6px}
 .pop-x{position:absolute;top:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--crema);border:2px solid var(--bordo);color:var(--bordo);font-size:20px;z-index:2}
 
+
+@media (min-width:861px) and (max-width:1100px){
+  .etiqueta{white-space:normal;max-width:calc(100% - 28px);padding:6px 12px 8px}
+  .etiqueta .script{font-size:24px}
+  .etiqueta small{font-size:13px}
+}

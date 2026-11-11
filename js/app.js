@@ -74,8 +74,8 @@
 
   // ---------- popups propios ----------
   let ultimoFoco = null;
-  const abrirPop = (p, foco) => { ultimoFoco = document.activeElement; p.classList.add('abierto'); document.documentElement.classList.add('sin-scroll'); setTimeout(() => (foco || p.querySelector('.pop-x'))?.focus({ preventScroll: true }), 60); };
-  const cerrarPop = (p) => { if (!p.classList.contains('abierto')) return; p.classList.remove('abierto'); if (!$('.pop.abierto') && !menu.classList.contains('abierto')) document.documentElement.classList.remove('sin-scroll'); ultimoFoco?.focus?.({ preventScroll: true }); };
+  const abrirPop = (p, foco) => { ultimoFoco = document.activeElement; p.classList.add('abierto'); document.documentElement.classList.add('sin-scroll', 'pop-on'); setTimeout(() => (foco || p.querySelector('.pop-x'))?.focus({ preventScroll: true }), 60); };
+  const cerrarPop = (p) => { if (!p.classList.contains('abierto')) return; p.classList.remove('abierto'); if (!$('.pop.abierto')) document.documentElement.classList.remove('pop-on'); if (!$('.pop.abierto') && !menu.classList.contains('abierto')) document.documentElement.classList.remove('sin-scroll'); ultimoFoco?.focus?.({ preventScroll: true }); };
   $$('.pop').forEach(p => {
     p.addEventListener('click', e => { if (e.target === p || e.target.closest('.pop-x,[data-cerrar],#pop-cerrar')) cerrarPop(p); });
   });
@@ -141,13 +141,14 @@
     const precios = [...new Set(items.map(p => p.precio))];
     const unico = items.length > 2 && precios.length === 1 && precios[0] != null;
     const pedir = PEDIBLES.has(c.id);
-    return `<section class="marco caja" data-diam="${['tl', 'tr', 'br', 'bl'][c.id.length % 4]}">
+    return `<section class="marco caja" data-diam="tr">
       <h3 class="script">${esc(c.nombre)}${unico ? `<small>${c.id === 'tortas' ? 'por porción ' : ''}${plata(precios[0])}</small>` : ''}</h3>
       <ul>${items.map(p => `<li class="${p.disponible === false ? 'off' : ''}"><div><b>${esc(p.nombre)}</b>${p.descripcion ? `<span>${esc(p.descripcion)}</span>` : ''}</div>${unico ? '' : `<em>${plata(p.precio)}</em>`}${pedir && p.disponible !== false ? qty(p.id) : ''}</li>`).join('')}</ul>
     </section>`;
   };
 
-  let hojaAct = 0, cajaAct = 'tortas';
+  const GRUPOS_CELU = [['g1', 'Tortas', ['tortas']], ['g2', 'Mostrador dulce', ['dulce']], ['g3', 'Alfajores y cookies', ['alfajores', 'cookies']], ['g4', 'Salado', ['salado']], ['g5', 'Sandwiches', ['sandwiches']], ['g6', 'Cocina y brunch', ['cocina', 'brunch']], ['g7', 'Café', ['cafeteria', 'otras']], ['g8', 'Frías', ['frias']], ['g9', 'Tés y matcha', ['tes', 'matcha']]];
+  let hojaAct = 0, cajaAct = 'g1';
   const pintarCarta = (cats, prods) => {
     const hojas = $('#hojas'), celu = $('#cajas-celu'), chips = $('#cat-chips');
     const cajaDe = (id) => {
@@ -156,15 +157,25 @@
       const it = prods.filter(p => p.categoria === id); return it.length ? caja(c, it) : '';
     };
     hojas.innerHTML = HOJAS.map((cols, i) => `<div class="hoja${i === hojaAct ? ' on' : ''}" role="tabpanel" aria-hidden="${i !== hojaAct}">${cols.map(col => `<div class="col">${col.map(cajaDe).join('')}</div>`).join('')}</div>`).join('');
-    const ids = HOJAS.flat(2).filter(id => id === 'matcha' || prods.some(p => p.categoria === id));
-    if (!ids.includes(cajaAct)) cajaAct = ids[0];
-    const nom = (id) => id === 'matcha' ? 'Matcha' : (cats.find(c => c.id === id)?.nombre || id);
-    chips.innerHTML = ids.map(id => `<button role="tab" class="chip${id === cajaAct ? ' on' : ''}" aria-selected="${id === cajaAct}" data-c="${id}">${esc(nom(id))}</button>`).join('');
-    celu.innerHTML = ids.map(id => `<div class="pila${id === cajaAct ? ' on' : ''}" data-c="${id}" aria-hidden="${id !== cajaAct}">${cajaDe(id)}</div>`).join('');
+    const tiene = (id) => id === 'matcha' || prods.some(p => p.categoria === id);
+    const grupos = GRUPOS_CELU.map(([k, n, ids]) => [k, n, ids.filter(tiene)]).filter(g => g[2].length);
+    if (!grupos.some(g => g[0] === cajaAct)) cajaAct = grupos[0][0];
+    chips.innerHTML = grupos.map(([k, n]) => `<button role="tab" class="chip${k === cajaAct ? ' on' : ''}" aria-selected="${k === cajaAct}" data-c="${k}">${esc(n)}</button>`).join('');
+    celu.innerHTML = grupos.map(([k, , ids]) => `<div class="pila${k === cajaAct ? ' on' : ''}" data-c="${k}" aria-hidden="${k !== cajaAct}">${ids.map(cajaDe).join('')}</div>`).join('');
     $$('.hoja', hojas).forEach((h, i) => { if (i !== hojaAct) h.inert = true; });
     $$('.pila', celu).forEach(p => { if (!p.classList.contains('on')) p.inert = true; });
     $$('.marco', hojas).concat($$('.marco', celu)).forEach(m => initMarco(m));
+    fijarAlto();
   };
+  // alto fijo de la pila del celu: el de la caja más alta + margen (cambiar de chip nunca mueve nada)
+  let anchoFijado = 0;
+  const fijarAlto = () => {
+    const celu = $('#cajas-celu'); if (!celu || !celu.offsetParent) return;
+    celu.style.height = '';
+    const h = Math.max(...$$('.pila', celu).map(p => p.scrollHeight));
+    celu.style.height = Math.ceil(h + 24) + 'px'; anchoFijado = innerWidth;
+  };
+  addEventListener('resize', () => { if (innerWidth !== anchoFijado) fijarAlto(); });
   $$('.hoja-tab').forEach(b => b.addEventListener('click', () => {
     hojaAct = +b.dataset.h;
     $$('.hoja-tab').forEach(x => { const on = x === b; x.classList.toggle('on', on); x.setAttribute('aria-selected', on); });
