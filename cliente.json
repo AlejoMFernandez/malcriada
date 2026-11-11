@@ -1,0 +1,756 @@
+{
+ "$schema": "https://raw.githubusercontent.com/AlejoMFernandez/kit-demos/main/docs/cliente.schema.json",
+ "id": "malcriada",
+ "nombre": "Malcriada",
+ "pais": "AR",
+ "idioma": "es",
+ "modo": "demo",
+ "whatsapp": "5492216685167",
+ "instagram": "malcriadacafe",
+ "prefijoPedido": "MC",
+ "supabase": {
+  "url": "",
+  "anonKey": ""
+ },
+ "marca": {
+  "logo": "img/logo.svg",
+  "logoPanel": "img/logo-claro.svg",
+  "favicon": "img/favicon.png",
+  "logoClaro": "img/logo-claro.svg",
+  "isotipo": "img/isotipo.svg",
+  "colores": {
+   "fondo": "#FBF6EA",
+   "superficie": "#FFFDF8",
+   "texto": "#3E0A1B",
+   "primario": "#5A1028",
+   "acento": "#F6D3D3",
+   "borde": "#E3CFC4"
+  },
+  "fuentes": {
+   "titulos": "'Outfit', sans-serif",
+   "texto": "'Outfit', sans-serif",
+   "googleFonts": ""
+  },
+  "estilo": {
+   "forma": "redondeada",
+   "sombra": "suave",
+   "borde": "1.5px",
+   "mayusculas": false
+  }
+ },
+ "modulos": {
+  "carta": true,
+  "carrito": true,
+  "reservas": false,
+  "admin": true,
+  "cartaQR": true
+ },
+ "horarios": {
+  "lun": [
+   [
+    "15:00",
+    "20:00"
+   ]
+  ],
+  "mar": [
+   [
+    "09:00",
+    "20:00"
+   ]
+  ],
+  "mie": [
+   [
+    "09:00",
+    "20:00"
+   ]
+  ],
+  "jue": [
+   [
+    "09:00",
+    "20:00"
+   ]
+  ],
+  "vie": [
+   [
+    "09:00",
+    "20:00"
+   ]
+  ],
+  "sab": [
+   [
+    "09:30",
+    "20:00"
+   ]
+  ],
+  "dom": [
+   [
+    "09:30",
+    "20:00"
+   ]
+  ]
+ },
+ "pedidos": {
+  "salidas": [
+   "mercadopago",
+   "whatsapp",
+   "efectivo"
+  ],
+  "tipos": [
+   "retiro"
+  ],
+  "envio": 0,
+  "minimo": 0,
+  "sinPrecio": "a_confirmar",
+  "encargo": {
+   "anticipacionHoras": 24,
+   "diasAdelante": 21,
+   "franjas": [
+    {
+     "id": "manana",
+     "nombre": "Mañana",
+     "desde": "09:30",
+     "hasta": "13:00"
+    },
+    {
+     "id": "tarde",
+     "nombre": "Tarde",
+     "desde": "15:00",
+     "hasta": "20:00"
+    }
+   ]
+  }
+ },
+ "pagos": {
+  "mercadopago": {
+   "endpoint": "https://kit-demos-amf.vercel.app/api/mp-preference",
+   "modo": "sandbox"
+  },
+  "efectivo": {
+   "porDia": {
+    "lun": 15,
+    "mar": 15,
+    "mie": 15,
+    "jue": 15,
+    "vie": 15,
+    "sab": 15,
+    "dom": 15
+   }
+  }
+ },
+ "carta": {
+  "categorias": [
+   {
+    "id": "tortas-enteras",
+    "nombre": "Tortas enteras",
+    "anticipacionHoras": 24,
+    "sena": 0.5
+   },
+   {
+    "id": "navidad",
+    "nombre": "Navidad malcriada",
+    "especial": true,
+    "desde": "2026-12-01",
+    "hasta": "2026-12-24",
+    "avisoDias": 45,
+    "bajada": "Latas, pan dulce y cajas para regalar"
+   },
+   {
+    "id": "alfajores",
+    "nombre": "Alfajores xxxl"
+   },
+   {
+    "id": "cookies",
+    "nombre": "Cookies"
+   },
+   {
+    "id": "tortas",
+    "nombre": "Tortas por porción"
+   },
+   {
+    "id": "dulce",
+    "nombre": "Mostrador dulce"
+   },
+   {
+    "id": "salado",
+    "nombre": "Mostrador salado"
+   },
+   {
+    "id": "sandwiches",
+    "nombre": "Sandwiches"
+   },
+   {
+    "id": "cocina",
+    "nombre": "Sale de cocina"
+   },
+   {
+    "id": "brunch",
+    "nombre": "Brunch para 2"
+   },
+   {
+    "id": "cafeteria",
+    "nombre": "Cafetería"
+   },
+   {
+    "id": "otras",
+    "nombre": "Otras bebidas"
+   },
+   {
+    "id": "frias",
+    "nombre": "Bebidas frías"
+   },
+   {
+    "id": "tes",
+    "nombre": "Nuestros tés"
+   }
+  ],
+  "productos": [
+   {
+    "id": "te-cheesecake",
+    "categoria": "tortas-enteras",
+    "nombre": "Cheesecake malcriada",
+    "precio": 140000,
+    "descripcion": "26 cm. Crema de choco blanco, frambuesas y pistachos.",
+    "foto": "img/t-cheesecake.webp",
+    "etiquetas": [
+     "casa"
+    ]
+   },
+   {
+    "id": "te-keylime",
+    "categoria": "tortas-enteras",
+    "nombre": "Key lime pie",
+    "precio": 130000,
+    "descripcion": "26 cm. Con pistachos.",
+    "foto": "img/t-keylime.webp"
+   },
+   {
+    "id": "te-marquise",
+    "categoria": "tortas-enteras",
+    "nombre": "Marquise de chocolate semiamargo",
+    "precio": 130000,
+    "descripcion": "Con crema, dulce de leche y reducción de frutos rojos.",
+    "foto": "img/t-marquise.webp"
+   },
+   {
+    "id": "te-matilda",
+    "categoria": "tortas-enteras",
+    "nombre": "Torta Matilda",
+    "precio": 140000,
+    "descripcion": "Capas de chocolate con ganache.",
+    "foto": "img/t-matilda.webp"
+   },
+   {
+    "id": "te-tresleches",
+    "categoria": "tortas-enteras",
+    "nombre": "Tres leches",
+    "precio": 130000,
+    "descripcion": "26 cm."
+   },
+   {
+    "id": "te-ny",
+    "categoria": "tortas-enteras",
+    "nombre": "NY cheesecake",
+    "precio": 120000,
+    "descripcion": "26 cm. Con reducción de frutos rojos."
+   },
+   {
+    "id": "te-2pisos",
+    "categoria": "tortas-enteras",
+    "nombre": "Torta 2 pisos",
+    "precio": 290000,
+    "descripcion": "26 cm + 18 cm. Rellenos y color a elección."
+   },
+   {
+    "id": "te-ddl",
+    "categoria": "tortas-enteras",
+    "nombre": "Cheesecake de dulce de leche",
+    "precio": 130000,
+    "descripcion": "Con crema, toffee y nueces."
+   },
+   {
+    "id": "te-carrot",
+    "categoria": "tortas-enteras",
+    "nombre": "Carrot cake",
+    "precio": 130000,
+    "descripcion": "24 cm. Frosting de cream cheese y frutos secos."
+   },
+   {
+    "id": "nv-lata",
+    "categoria": "navidad",
+    "nombre": "Lata surtida",
+    "precio": null,
+    "descripcion": "Pastelería surtida en lata de colección.",
+    "foto": "img/n-lata.webp"
+   },
+   {
+    "id": "nv-pandulce",
+    "categoria": "navidad",
+    "nombre": "Pan dulce en casita",
+    "precio": null,
+    "descripcion": "500 g, en la cajita casa de Malcriada.",
+    "foto": "img/n-casita.webp"
+   },
+   {
+    "id": "nv-tiramisu",
+    "categoria": "navidad",
+    "nombre": "Lata de tiramisú",
+    "precio": null,
+    "descripcion": "1 kg."
+   },
+   {
+    "id": "nv-box",
+    "categoria": "navidad",
+    "nombre": "Box degustación",
+    "precio": null,
+    "descripcion": "Para 6 personas."
+   },
+   {
+    "id": "alf-limon",
+    "categoria": "alfajores",
+    "nombre": "Alfajor de limón",
+    "precio": 10000,
+    "descripcion": "Pistachos y chocolate blanco. Desde 2018.",
+    "foto": "img/l-alfajor.webp",
+    "etiquetas": [
+     "casa"
+    ]
+   },
+   {
+    "id": "alf-chocotorta",
+    "categoria": "alfajores",
+    "nombre": "Alfajor chocotorta",
+    "precio": 10000,
+    "descripcion": "Triple, con chocolate con leche."
+   },
+   {
+    "id": "alf-frambuesa",
+    "categoria": "alfajores",
+    "nombre": "Alfajor corazón de frambuesa",
+    "precio": 10000,
+    "descripcion": "Dulce de leche y chocolate blanco."
+   },
+   {
+    "id": "ck-pistacho",
+    "categoria": "cookies",
+    "nombre": "Cookie pistacho 100 %",
+    "precio": 8700,
+    "descripcion": "Choco blanco, rellena de praliné casero de pistacho.",
+    "foto": "img/l-cookie.webp"
+   },
+   {
+    "id": "ck-ferrero",
+    "categoria": "cookies",
+    "nombre": "Cookie ferrero nutella",
+    "precio": 8700,
+    "descripcion": "Con avellanas."
+   },
+   {
+    "id": "ck-pecan",
+    "categoria": "cookies",
+    "nombre": "Cookie pecan caramel",
+    "precio": 8700
+   },
+   {
+    "id": "ck-chips",
+    "categoria": "cookies",
+    "nombre": "Cookie chips con sal marina",
+    "precio": 8700
+   },
+   {
+    "id": "ck-frambuesa",
+    "categoria": "cookies",
+    "nombre": "Cookie choco frambuesa",
+    "precio": 8700,
+    "descripcion": "Ganache y gelée de frambuesa."
+   },
+   {
+    "id": "ck-pepa",
+    "categoria": "cookies",
+    "nombre": "Pepa de frambuesa",
+    "precio": 8700,
+    "descripcion": "Con pistachos."
+   },
+   {
+    "id": "tp-0",
+    "categoria": "tortas",
+    "nombre": "NY Cheesecake",
+    "precio": 18500,
+    "descripcion": "Con reducción de frutos rojos."
+   },
+   {
+    "id": "tp-1",
+    "categoria": "tortas",
+    "nombre": "Cheesecake malcriada",
+    "precio": 18500,
+    "descripcion": "Crema de choco blanco, frambuesas y pistachos."
+   },
+   {
+    "id": "tp-2",
+    "categoria": "tortas",
+    "nombre": "Torta Matilda",
+    "precio": 18500,
+    "descripcion": "Con ganache de chocolate."
+   },
+   {
+    "id": "tp-3",
+    "categoria": "tortas",
+    "nombre": "Key Lime Pie",
+    "precio": 18500,
+    "descripcion": "Con pistachos."
+   },
+   {
+    "id": "tp-4",
+    "categoria": "tortas",
+    "nombre": "Carrot cake",
+    "precio": 18500,
+    "descripcion": "Frosting de cream cheese y frutos secos."
+   },
+   {
+    "id": "tp-5",
+    "categoria": "tortas",
+    "nombre": "Cheesecake de dulce de leche",
+    "precio": 18500,
+    "descripcion": "Con crema, toffee y nueces."
+   },
+   {
+    "id": "tp-6",
+    "categoria": "tortas",
+    "nombre": "Torta Franui",
+    "precio": 18500,
+    "descripcion": "Cacao, ganache de choco blanco con frambuesas, ganache de choco con leche, frambuesas y lluvia de Franui."
+   },
+   {
+    "id": "tp-7",
+    "categoria": "tortas",
+    "nombre": "Marquise de chocolate",
+    "precio": 18500,
+    "descripcion": "Con crema, dulce de leche y reducción de frutos rojos."
+   },
+   {
+    "id": "d-roll",
+    "categoria": "dulce",
+    "nombre": "Roll de canela",
+    "precio": 8000
+   },
+   {
+    "id": "d-medialuna",
+    "categoria": "dulce",
+    "nombre": "Medialuna",
+    "precio": 3200
+   },
+   {
+    "id": "d-medialuna-r",
+    "categoria": "dulce",
+    "nombre": "Medialuna rellena",
+    "precio": 5700,
+    "descripcion": "Pastelera de pistacho, o pastelera y dulce de leche.",
+    "foto": "img/l-medialuna.webp"
+   },
+   {
+    "id": "d-danesa",
+    "categoria": "dulce",
+    "nombre": "Danesa XL",
+    "precio": 6800,
+    "descripcion": "De estación.",
+    "foto": "img/l-danesa.webp"
+   },
+   {
+    "id": "d-facturita",
+    "categoria": "dulce",
+    "nombre": "Facturita o mini roll de manzana",
+    "precio": 4500
+   },
+   {
+    "id": "d-croissant",
+    "categoria": "dulce",
+    "nombre": "Croissant malcriada",
+    "precio": 8000,
+    "descripcion": "Pastelera y frutos rojos (vie a dom)."
+   },
+   {
+    "id": "d-brownie",
+    "categoria": "dulce",
+    "nombre": "Brownie cheesecake",
+    "precio": 10200,
+    "foto": "img/l-brownie.webp"
+   },
+   {
+    "id": "s-tostado",
+    "categoria": "salado",
+    "nombre": "Tostado ciabatta",
+    "precio": 8000,
+    "descripcion": "Jamón y queso danbo."
+   },
+   {
+    "id": "s-chipa",
+    "categoria": "salado",
+    "nombre": "Chipa de provolone",
+    "precio": 4200
+   },
+   {
+    "id": "s-scon",
+    "categoria": "salado",
+    "nombre": "Scon de mix de quesos",
+    "precio": 8000,
+    "descripcion": "Con dip de queso crema."
+   },
+   {
+    "id": "s-roll",
+    "categoria": "salado",
+    "nombre": "Roll de queso provolone",
+    "precio": 8000,
+    "descripcion": "Pesto de albahaca y nueces."
+   },
+   {
+    "id": "s-fosforito",
+    "categoria": "salado",
+    "nombre": "Fosforito con lomito",
+    "precio": 14000,
+    "descripcion": "Lomito horneado y queso danbo."
+   },
+   {
+    "id": "s-medialuna",
+    "categoria": "salado",
+    "nombre": "Medialuna de jamón y queso",
+    "precio": 10200,
+    "descripcion": "Jamón cocido natural y queso danbo."
+   },
+   {
+    "id": "sw-brioche",
+    "categoria": "sandwiches",
+    "nombre": "Brioche de pastrón",
+    "precio": 19500,
+    "descripcion": "Queso danbo, mostaza Dijon, pepinillos. Prensado, con papas."
+   },
+   {
+    "id": "sw-bagel",
+    "categoria": "sandwiches",
+    "nombre": "Bagel de lomito",
+    "precio": 19500,
+    "descripcion": "Cheddar y manteca de hierbas. Prensado, con papas."
+   },
+   {
+    "id": "sw-focaccia",
+    "categoria": "sandwiches",
+    "nombre": "Focaccia de jamón crudo",
+    "precio": 19500,
+    "descripcion": "Danbo, rúcula, tomate asado y pesto. Con papas."
+   },
+   {
+    "id": "sw-chipa",
+    "categoria": "sandwiches",
+    "nombre": "Chipa sandwich",
+    "precio": 19500,
+    "descripcion": "Pesto suave, jamón y danbo, o danbo, tomate y pesto. Con papas."
+   },
+   {
+    "id": "sw-croissant",
+    "categoria": "sandwiches",
+    "nombre": "Croissant de jamón crudo",
+    "precio": 19500,
+    "descripcion": "Brie, rúcula, tomate asado y pesto (vie a dom). Con papas."
+   },
+   {
+    "id": "k-avocado",
+    "categoria": "cocina",
+    "nombre": "Avocado toast",
+    "precio": 20000,
+    "descripcion": "Palta, cream cheese con eneldo y limón + huevito 6'."
+   },
+   {
+    "id": "k-mbeju",
+    "categoria": "cocina",
+    "nombre": "Mbejú",
+    "precio": 22000,
+    "descripcion": "Cream cheese con hierbas, cherrys asados, palta, huevito 6' y cebolla encurtida."
+   },
+   {
+    "id": "k-tostadas",
+    "categoria": "cocina",
+    "nombre": "Tostadas (2)",
+    "precio": 12500,
+    "descripcion": "Queso crema y mermelada casera de frutos rojos."
+   },
+   {
+    "id": "k-yogur",
+    "categoria": "cocina",
+    "nombre": "Yogur natural",
+    "precio": 18000,
+    "descripcion": "Granola casera, fruta fresca y reducción de frutos rojos."
+   },
+   {
+    "id": "b-brunch",
+    "categoria": "brunch",
+    "nombre": "Brunch para 2",
+    "precio": 84000,
+    "descripcion": "2 bebidas calientes, 2 jugos fríos, 1 porción de torta XL, 1 sándwich con papas, 1 alfajor, 2 yogures mini y 1 scon de queso. Hasta las 19:00 hs."
+   },
+   {
+    "id": "c-doppio",
+    "categoria": "cafeteria",
+    "nombre": "Doppio / Machiatto / Cortado",
+    "precio": 5200
+   },
+   {
+    "id": "c-latte",
+    "categoria": "cafeteria",
+    "nombre": "Latte / Latte doble",
+    "precio": 7500,
+    "descripcion": "Doble $8.000."
+   },
+   {
+    "id": "c-capu",
+    "categoria": "cafeteria",
+    "nombre": "Capuccino simple / doble",
+    "precio": 7000,
+    "descripcion": "Doble $7.500."
+   },
+   {
+    "id": "c-flat",
+    "categoria": "cafeteria",
+    "nombre": "Flat white",
+    "precio": 7500
+   },
+   {
+    "id": "c-moka",
+    "categoria": "cafeteria",
+    "nombre": "Moka",
+    "precio": 8000
+   },
+   {
+    "id": "c-americano",
+    "categoria": "cafeteria",
+    "nombre": "Americano doble",
+    "precio": 6000
+   },
+   {
+    "id": "c-vainilla",
+    "categoria": "cafeteria",
+    "nombre": "Latte de vainilla",
+    "precio": 8500
+   },
+   {
+    "id": "o-choco",
+    "categoria": "otras",
+    "nombre": "Chocolate caliente",
+    "precio": 8500
+   },
+   {
+    "id": "o-matcha",
+    "categoria": "otras",
+    "nombre": "Matcha latte",
+    "precio": 9500,
+    "descripcion": "Matcha ceremonial de Shizuoka, Japón."
+   },
+   {
+    "id": "o-chai",
+    "categoria": "otras",
+    "nombre": "Chai latte",
+    "precio": 7500
+   },
+   {
+    "id": "f-naranja",
+    "categoria": "frias",
+    "nombre": "Exprimido de naranja",
+    "precio": 8000
+   },
+   {
+    "id": "f-limonada",
+    "categoria": "frias",
+    "nombre": "Limonada menta, miel y jengibre",
+    "precio": 9000
+   },
+   {
+    "id": "f-hibiscus",
+    "categoria": "frias",
+    "nombre": "Limonada de hibiscus",
+    "precio": 9000
+   },
+   {
+    "id": "f-iced-tea",
+    "categoria": "frias",
+    "nombre": "Iced tea",
+    "precio": 9000,
+    "descripcion": "Té verde y pétalos de jazmín."
+   },
+   {
+    "id": "f-frambuesa",
+    "categoria": "frias",
+    "nombre": "Licuado frambuesa y crema",
+    "precio": 10200
+   },
+   {
+    "id": "f-banana",
+    "categoria": "frias",
+    "nombre": "Licuado banana split",
+    "precio": 10200
+   },
+   {
+    "id": "f-iced-matcha",
+    "categoria": "frias",
+    "nombre": "Iced matcha latte",
+    "precio": 10000
+   },
+   {
+    "id": "f-matcha-tonic",
+    "categoria": "frias",
+    "nombre": "Iced matcha tónic",
+    "precio": 11500
+   },
+   {
+    "id": "f-iced-latte",
+    "categoria": "frias",
+    "nombre": "Iced latte",
+    "precio": 8500
+   },
+   {
+    "id": "f-iced-flat",
+    "categoria": "frias",
+    "nombre": "Iced flat white",
+    "precio": 8000
+   },
+   {
+    "id": "f-coca",
+    "categoria": "frias",
+    "nombre": "Coca Cola",
+    "precio": 6500
+   },
+   {
+    "id": "f-agua",
+    "categoria": "frias",
+    "nombre": "Agua con / sin gas",
+    "precio": 4000
+   },
+   {
+    "id": "t-hong",
+    "categoria": "tes",
+    "nombre": "Hong Mao Feng",
+    "precio": 8000,
+    "descripcion": "Rojo · Hunan, China. Frutal, confitura, cacao."
+   },
+   {
+    "id": "t-tie",
+    "categoria": "tes",
+    "nombre": "Tie Guan Yin",
+    "precio": 8000,
+    "descripcion": "Wulong · Fujian, China. Floral, manteca, lácteo."
+   },
+   {
+    "id": "t-anji",
+    "categoria": "tes",
+    "nombre": "An Ji Bai Cha",
+    "precio": 8000,
+    "descripcion": "Verde · Zhejiang, China. Vegetal, lácteo, frutos secos."
+   }
+  ]
+ },
+ "textos": {
+  "tuPedido": "Tu encargo",
+  "verPedido": "Ver encargo",
+  "carritoVacio": "Todavía no sumaste nada a tu encargo.",
+  "enviarPedido": "Enviar encargo",
+  "pedidoListo": "¡Encargo enviado!",
+  "pedidoPagadoSub": "Encargo {codigo} pagado. Te esperamos el día del retiro.",
+  "carritoVacioSub": "Sumá tortas, alfajores o cookies y aparecen acá."
+ }
+}
